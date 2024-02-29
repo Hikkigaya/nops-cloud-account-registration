@@ -2,7 +2,7 @@ repo_name: Hikkigaya/nops-cloud-account-registration
 report_id: 2690ccfe6e0a93b66c3f2dae8cbe52e9
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T08:51:21+00:00'
+timestamp: '2024-02-29T18:38:09+00:00'
 requested_by: Hikkigaya
 provider: github
 branch: main
@@ -86,6 +86,18 @@ tools:
     detected_date: Feb 9
     severity: high
     first_patched: 39.0.1
+  - name: Python Cryptography package vulnerable to Bleichenbacher timing oracle attack
+    cve_id: CVE-2023-50782
+    cve_url: https://github.com/advisories/GHSA-3ww4-gg4f-jr7f
+    detected_date: Feb 6
+    severity: high
+    first_patched: 42.0.0
+  - name: cryptography vulnerable to NULL-dereference when loading PKCS7 certificates
+    cve_id: CVE-2023-49083
+    cve_url: https://github.com/advisories/GHSA-jfhm-5ghh-2f97
+    detected_date: Nov 29
+    severity: moderate
+    first_patched: 41.0.6
   - name: Cipher.update_into can corrupt memory if passed an immutable python object
       as the outbuf
     cve_id: CVE-2023-23931
@@ -93,18 +105,12 @@ tools:
     detected_date: Feb 8
     severity: moderate
     first_patched: 39.0.1
-  - name: cryptography vulnerable to NULL-dereference when loading PKCS7 certificates
-    cve_id: CVE-2023-49083
-    cve_url: https://github.com/advisories/GHSA-jfhm-5ghh-2f97
-    detected_date: Nov 29
+  - name: Null pointer dereference in PKCS12 parsing
+    cve_id: CVE-2024-0727
+    cve_url: https://github.com/advisories/GHSA-9v9h-cgj8-h64p
+    detected_date: Feb 17
     severity: moderate
-    first_patched: 41.0.6
-  - name: pyca/cryptography's wheels include vulnerable OpenSSL
-    cve_id: 
-    cve_url: https://github.com/advisories/GHSA-jm77-qphf-c4w8
-    detected_date: Aug 2
-    severity: low
-    first_patched: 41.0.3
+    first_patched: 42.0.2
   - name: Vulnerable OpenSSL included in cryptography wheels
     cve_id: 
     cve_url: https://github.com/advisories/GHSA-v8gr-m533-ghj9
@@ -117,6 +123,12 @@ tools:
     detected_date: Jun 3
     severity: low
     first_patched: 41.0.0
+  - name: pyca/cryptography's wheels include vulnerable OpenSSL
+    cve_id: 
+    cve_url: https://github.com/advisories/GHSA-jm77-qphf-c4w8
+    detected_date: Aug 2
+    severity: low
+    first_patched: 41.0.3
 - name: pycryptodomex
   description: Cryptographic library for Python
   package_url: https://pypi.org/project/pycryptodomex
@@ -131,6 +143,13 @@ tools:
   detection_source: nops-aws-account-register/lambda_functions/nops_register_aws_acc/requirements.txt
   last_updated_by: Parth Vyas
   last_updated_on: 2022-03-31 23:59:18.000000000 Z
+  vulnerabilities:
+  - name: PyCryptodome and pycryptodomex side-channel leakage for OAEP decryption
+    cve_id: CVE-2023-52323
+    cve_url: https://github.com/advisories/GHSA-j225-cvw7-qrx7
+    detected_date: Jan 6
+    severity: moderate
+    first_patched: 3.19.1
 - name: requests
   description: Python HTTP for Humans
   package_url: https://pypi.org/project/requests
